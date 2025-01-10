@@ -1,0 +1,12 @@
+#webcam,
+#webcam video {
+    display: inline-block;
+    width: 100% !important;
+    margin: auto;
+    height: auto !important;
+    border-radius: 15px;
+}
+
+#map {
+    height: 200px;
+}
