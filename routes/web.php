@@ -21,6 +21,13 @@ Route::middleware([CheckSession::class, CheckSessionExpiry::class])->group(funct
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/presensi', [PresensiController::class, 'presensi'])->name('presensi');
     Route::post('/addPresensi', [PresensiController::class, 'addPresensi'])->name('addPresensi');
+    Route::get('/EditProfile', [PresensiController::class, 'EditProfile'])->name('EditProfile');
+    Route::post('/updateProfile', [PresensiController::class, 'updateProfile'])->name('updateProfile');
+    Route::get('/histori', [PresensiController::class, 'histori'])->name('histori');
+    Route::post('/getHistory', [PresensiController::class, 'getHistory'])->name('getHistory');
+    Route::get('/izin', [PresensiController::class, 'izin'])->name('izin');
+    Route::get('/buatIzin', [PresensiController::class, 'buatIzin'])->name('buatIzin');
+    Route::post('/prosesIzin', [PresensiController::class, 'prosesIzin'])->name('prosesIzin');
 });
 
 

@@ -6,11 +6,11 @@
             <strong>Home</strong>
         </div>
     </a>
-    <a href="#" class="item">
+    <a href="{{route('histori')}}" class="item {{request()->is("histori") ? 'active' : ''}}">
         <div class="col">
             <ion-icon name="calendar-outline" role="img" class="md hydrated"
                 aria-label="calendar outline"></ion-icon>
-            <strong>Calendar</strong>
+            <strong>Hisroti</strong>
         </div>
     </a>
     <a href="{{route('presensi')}}" class="item">
@@ -20,14 +20,14 @@
             </div>
         </div>
     </a>
-    <a href="#" class="item">
+    <a href="{{route('izin')}}" class="item {{request()->is("izin") ? 'active' : ''}}">
         <div class="col">
             <ion-icon name="document-text-outline" role="img" class="md hydrated"
                 aria-label="document text outline"></ion-icon>
-            <strong>Docs</strong>
+            <strong>Izin</strong>
         </div>
     </a>
-    <a href="javascript:;" class="item">
+    <a href="{{route('EditProfile')}}" class="item {{request()->is("EditProfile") ? 'active' : ''}}">
         <div class="col">
             <ion-icon name="people-outline" role="img" class="md hydrated" aria-label="people outline"></ion-icon>
             <strong>Profile</strong>
@@ -59,6 +59,8 @@
 integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
 crossorigin=""></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
 <script>
     am4core.ready(function () {
