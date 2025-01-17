@@ -49,20 +49,13 @@ class DashboardController extends Controller
                         ->where('status_approved', 'Sukses')
                         ->groupBy('id_karyawan')
                         ->first();
-        if($rekapbulanini){
-            $jmlIzin = $rekapizin->jmlIzin;
-            $jmlSakit = $rekapizin->jmlSakit;
-        } else {
-            $jmlIzin = 0;
-            $jmlSakit = 0;
-        }
         $data = [
             'presensi' => $presensi,
             'rekapbulan' => $rekapbulanini,
             'namabulan' => $namabulan,
             'rekappresensi' => $rekappresensi,
             'leaderBoard' => $leaderBoard,
-            'rekapizin' => $rekapizin
+            'rekapizin' => $rekapizin ?? new Izin
         ];
         return view('user.dashboard', $data);
     }
