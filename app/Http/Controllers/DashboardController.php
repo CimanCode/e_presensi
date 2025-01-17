@@ -34,6 +34,7 @@ class DashboardController extends Controller
                                 ->where('id_karyawan', $id_karyawan)
                                 ->whereRaw('MONTH(tgl_presensi)="' . $bulanini . '"')
                                 ->whereRaw('YEAR(tgl_presensi)="' . $tahunini . '"')
+                                ->groupBy('id_karyawan')
                                 ->orderBy('tgl_presensi')
                                 ->orderBy('id_karyawan')
                                 ->first();
