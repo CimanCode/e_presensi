@@ -131,7 +131,7 @@
                     <div class="col-3">
                         <div class="card">
                             <div class="card-body text-center col" style="padding: 12px 12px !important; line-height: 0.8rem;">
-                                <span class="badge bg-danger" style="position: absolute; top:4px; right: 10px; z-index: 999; font-size: 0.6rem;">{{$rekapizin->jmlIzin != null ? $rekapizin->jmlIzin : 0}}</span>
+                                <span class="badge bg-danger" style="position: absolute; top:4px; right: 10px; z-index: 999; font-size: 0.6rem;">{{$rekapizin->jmlIzin == null ? 0 : $rekapizin->jmlIzin}}</span>
                                 <ion-icon name="newspaper-outline" class="text-primary mb-1" style="font-size: 1.8rem;"></ion-icon>
                                 <span style="font-size: 0.9rem; font-weight: 500;"> Izin </span>
                             </div>
@@ -140,7 +140,7 @@
                     <div class="col-3">
                         <div class="card">
                             <div class="card-body text-center col" style="padding: 12px 12px !important; line-height: 0.8rem;">
-                                <span class="badge bg-danger" style="position: absolute; top:4px; right: 10px; z-index: 999; font-size: 0.6rem;">{{$rekapizin->jmlSakit != null ? $rekapizin->jmlSakit : 0}}</span>
+                                <span class="badge bg-danger" style="position: absolute; top:4px; right: 10px; z-index: 999; font-size: 0.6rem;">{{$rekapizin->jmlSakit == null ? 0 : $rekapizin->jmlSakit}}</span>
                                 <ion-icon name="medkit-outline" class="text-warning mb-1" style="font-size: 1.8rem;"></ion-icon>
                                 <span style="font-size: 0.9rem; font-weight: 500;">Sakit</span>
                             </div>
