@@ -28,13 +28,14 @@ class DashboardController extends Controller
                                 ->get();
 
         $rekappresensi = Presensi::query()->selectRaw(
-                                'COUNT(id_karyawan) AS jmlHadir,
+                                'COUNT(id_karyawan) as jmlHadir,
                                  SUM(IF(jam_in > "07.00",1,0)) as jmlTerlambat'
                                 )
                                 ->where('id_karyawan', $id_karyawan)
                                 ->whereRaw('MONTH(tgl_presensi)="' . $bulanini . '"')
                                 ->whereRaw('YEAR(tgl_presensi)="' . $tahunini . '"')
                                 ->orderBy('tgl_presensi')
+                                ->orderBy('id_karyawan')
                                 ->first();
 
         $leaderBoard = Presensi::query()->join('karyawan', 'karyawan.id', '=', 'presensi.id_karyawan')
@@ -45,6 +46,7 @@ class DashboardController extends Controller
                         ->whereRaw('MONTH(tgl_izin)="' . $bulanini . '"')
                         ->whereRaw('YEAR(tgl_izin)="' . $tahunini . '"')
                         ->where('status_approved', 'Sukses')
+                        ->groupBy('id_karyawan')
                         ->first();
         $data = [
             'presensi' => $presensi,
